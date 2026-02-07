@@ -1,0 +1,28 @@
+/* --- Layout --- */
+
+/* Header */
+header {
+    position: relative;
+    background-image: url('https://picsum.photos/seed/developer/1920/1080');
+    background-size: cover; background-position: center; text-align: center; padding: 150px 0;
+}
+header::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 0.6) 50%, rgba(18, 18, 18, 0.4) 100%);
+}
+header .container { position: relative; z-index: 2; }
+header h1 { font-size: 4.5rem; color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+header p.h2 { font-size: 2.8rem; color: #c77dff; text-shadow: 0 0 15px rgba(199, 125, 255, 0.5); }
+header p.lead { font-size: 1.25rem; color: #EAEAEA; opacity: 0.9; }
+
+/* Navigation Bar */
+.navbar {
+    background-color: rgba(30, 30, 30, 0.85) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Contacto & Footer */
+#contacto a { color: #888; margin: 0 15px; transition: all 0.3s ease; display: inline-block; }
+#contacto a:hover { color: #c77dff; transform: translateY(-5px) scale(1.1); }
+footer { border-top: 1px solid rgba(255, 255, 255, 0.1); color: #888; }

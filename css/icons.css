@@ -1,0 +1,19 @@
+/* --- Icons --- */
+.tech-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 2rem;
+}
+
+.fa-map-marker-alt {
+    color: #E74C3C;
+}
+
+.fa-layer-group {
+    color: #40E0D0;
+}
+
+.fa-sync-alt {
+    color: #F39C12;
+}
