@@ -117,6 +117,8 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Sistema de Transporte (PHP)</h5>
                         <p class="card-text">Sistema de gestión de transporte con manejo de usuarios, roles, órdenes y reportes.</p>
+                        <p class="card-text"><strong>Problema:</strong> La operación se gestionaba completamente de forma manual, sin herramientas centralizadas para el control de datos, lo que generaba inconsistencias y dificultaba la trazabilidad.</p>
+                        <p class="card-text"><strong>Solución:</strong> Desarrollo de un sistema integral de gestión de transporte con arquitectura MVC, implementando módulos de usuarios, roles, órdenes y reportes. Se realizó ingeniería inversa de sistemas dispersos para centralizar la información, generando formatos únicos para establecimientos comerciales, checklists preoperacionales y un centro de KPIs con estadísticas generales del sistema.</p>
                         <div class="tech-icons mt-auto">
                             <i class="devicon-php-plain colored" title="PHP"></i>
                             <i class="devicon-mysql-plain colored" title="MySQL"></i>
@@ -133,7 +135,9 @@
                 <div class="card project-card-clean">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Gestión ITAM</h5>
-                        <p class="card-text">Sistema administrativo para gestión de procesos internos.</p>
+                        <p class="card-text">Sistema administrativo para gestión de procesos internos de infraestructura tecnológica y mesa de ayuda</p>
+                        <p class="card-text"><strong>Problema:</strong> La gestión de infraestructura tecnológica y mesa de ayuda se llevaba en documentos físicos, dificultando el control de hojas de vida, cambios programados, mantenimientos y auditorías. Además, existían problemas recurrentes para obtener firmas en formatos y atender solicitudes de manera oportuna.</p>
+                        <p class="card-text"><strong>Solución:</strong> Sistema administrativo integral que digitaliza la gestión de activos tecnológicos, implementando control de ciclo de vida, programación de mantenimientos y captura digital de firmas. Se integró una mesa de ayuda para gestionar solicitudes de mantenimiento, garantizando trazabilidad completa y cumplimiento de estándares de auditoría.</p>
                         <div class="tech-icons mt-auto">
                             <i class="devicon-php-plain colored" title="PHP"></i>
                             <i class="devicon-mysql-plain colored" title="MySQL"></i>
@@ -149,7 +153,9 @@
                 <div class="card project-card-clean">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Infraestructura Tech</h5>
-                        <p class="card-text">Aplicación para control y gestión de infraestructura tecnológica.</p>
+                        <p class="card-text">Base de desarrollo con sistema de gestion de roles y permisos con PHP 8.x </p>
+                        <p class="card-text"><strong>Problema:</strong> La repetición constante de implementar sistemas de permisos y roles en cada nuevo proyecto generaba pérdida de tiempo y código redundante.</p>
+                        <p class="card-text"><strong>Solución:</strong> Desarrollo de un framework base profesional con PHP 8.x, implementando arquitectura MVC, sistema de rutas, middlewares y gestión avanzada de roles y permisos. Integración con Vite para un stack moderno que permite enfocarse en la lógica de negocio, acelerando significativamente el desarrollo de nuevos proyectos.</p>
                         <div class="tech-icons mt-auto">
                             <i class="devicon-php-plain colored" title="PHP"></i>
                             <i class="devicon-mysql-plain colored" title="MySQL"></i>
@@ -166,6 +172,8 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Sistema de Ventas</h5>
                         <p class="card-text">Sistema de ventas con módulos de clientes, productos y facturación.</p>
+                        <p class="card-text"><strong>Problema:</strong> Puntos de venta pequeños con contabilidad desordenada y registros manuales en libros, sin control efectivo de inventario ni seguimiento de cuentas por cobrar.</p>
+                        <p class="card-text"><strong>Solución:</strong> Sistema integral de punto de venta (POS) con gestión de inventario, control de stock, administración financiera y fidelización de clientes. Incluye dashboard inteligente con KPIs dinámicos, módulo de ventas a crédito con control de abonos y pagos diferidos, centralizando todas las operaciones comerciales en una plataforma única.</p>
                         <div class="tech-icons mt-auto">
                             <i class="devicon-php-plain colored" title="PHP"></i>
                             <i class="devicon-mysql-plain colored" title="MySQL"></i>
@@ -181,6 +189,8 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Laravel Root</h5>
                         <p class="card-text">Proyecto base en Laravel aplicando buenas prácticas y estructura estándar.</p>
+                        <p class="card-text"><strong>Problema:</strong> La necesidad recurrente de implementar sistemas de permisos y roles en cada proyecto, buscando una solución que se adaptara al stack tecnológico preferido y aprovechara las ventajas de Laravel.</p>
+                        <p class="card-text"><strong>Solución:</strong> Proyecto base en Laravel que integra un stack tecnológico personalizado con sistema avanzado de usuarios, roles y permisos. Aprovecha las bondades del framework para ofrecer un desarrollo más eficiente y robusto que las implementaciones en PHP puro, sirviendo como fundación escalable para nuevos proyectos.</p>
                         <div class="tech-icons mt-auto">
                            <i class="devicon-laravel-plain colored" title="Laravel"></i>
                            <i class="devicon-php-plain colored" title="PHP"></i>
@@ -195,8 +205,28 @@
             <div class="col-lg-4 col-md-6 mb-4 reveal">
                 <div class="card project-card-clean">
                     <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Laravel Multitenancy</h5>
+                        <p class="card-text">Proyecto en Laravel con arquitectura multitenancy para gestión de múltiples inquilinos.</p>
+                        <p class="card-text"><strong>Problema:</strong> La gestión de un único producto con múltiples configuraciones para diversos clientes requería soluciones personalizadas y descentralizadas, lo que aumentaba la complejidad y el mantenimiento.</p>
+                        <p class="card-text"><strong>Solución:</strong> Implementación de una arquitectura multitenancy en Laravel, permitiendo la gestión centralizada de un solo producto con configuraciones diferenciadas para múltiples clientes. Esta solución optimiza la administración, reduce la duplicidad de código y facilita la escalabilidad del servicio.</p>
+                        <div class="tech-icons mt-auto">
+                           <i class="devicon-laravel-plain colored" title="Laravel"></i>
+                           <i class="devicon-php-plain colored" title="PHP"></i>
+                           <i class="fas fa-layer-group" title="Multitenancy"></i>
+                        </div>
+                        <a href="https://github.com/vickdark/laravel-multitenancy" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
+                    </div>
+                </div>
+            </div>
+            
+             <!-- Proyecto 7 -->
+            <div class="col-lg-4 col-md-6 mb-4 reveal">
+                <div class="card project-card-clean">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Sistema de Transporte Conductores (Ionic)</h5>
                         <p class="card-text">Aplicación móvil para conductores, integrada con sistema backend.</p>
+                        <p class="card-text"><strong>Problema:</strong> En el sistema de transporte, los conductores solo tenían acceso limitado y debían reportar manualmente el kilometraje inicial, final y los viajes realizados, generando demoras e inconsistencias.</p>
+                        <p class="card-text"><strong>Solución:</strong> Aplicación móvil desarrollada en Ionic que automatiza el envío de kilometraje y reportes de viajes. Implementa seguimiento GPS en tiempo real, integrado con un panel de tracking web que permite al cliente monitorear toda la operación de conductores en un mapa interactivo, mejorando el control y la eficiencia operativa.</p>
                         <div class="tech-icons mt-auto">
                            <i class="devicon-ionic-original colored" title="Ionic"></i>
                            <i class="devicon-javascript-plain colored" title="JavaScript"></i>
@@ -206,7 +236,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
