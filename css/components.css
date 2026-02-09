@@ -30,10 +30,34 @@
 /* Avatar */
 .avatar-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
+.libutton { 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  padding: 7px; 
+  text-align: center; 
+  outline: none; 
+  text-decoration: none !important; 
+  color: #ffffff !important; 
+  width: 200px; 
+  height: 32px; 
+  border-radius: 16px; 
+  background-color: #9b59b6; 
+  font-family: "SF Pro Text", Helvetica, sans-serif; 
+  transition: all 0.3s ease;
+} 
+
+.libutton:hover {
+  background-color: #c77dff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(155, 89, 182, 0.4);
+}
 .avatar-img {
     width: 200px;
     height: 200px;
