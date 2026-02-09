@@ -3,6 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio profesional de Victor Cardoza, Desarrollador PHP especializado en Backend, Calidad y Escalabilidad.">
+  <meta name="author" content="Victor Cardoza">
+  <meta name="keywords" content="Victor Cardoza, PHP, Developer, Backend, Portfolio, Laravel, MySQL">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vickdark.github.io/porfoliovictorcm/">
+  <meta property="og:title" content="Victor Cardoza - Desarrollador PHP">
+  <meta property="og:description" content="Enfoque en Backend, Calidad y Escalabilidad. Mira mis proyectos y contáctame.">
+  <meta property="og:image" content="https://vickdark.github.io/porfoliovictorcm/assets/img/img-url.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Victor Cardoza - Desarrollador PHP">
+  <meta property="twitter:description" content="Enfoque en Backend, Calidad y Escalabilidad. Mira mis proyectos y contáctame.">
+  <meta property="twitter:image" content="https://vickdark.github.io/porfoliovictorcm/assets/img/img-url.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/img/php.ico">
+
   <title>Victor Cardoza - Portfolio - Desarrollador PHP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,15 +35,27 @@
   <link href="css/components.css" rel="stylesheet">
   <link href="css/icons.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript">
+    (function() {
+      // Reemplaza con tu Public Key de EmailJS
+      emailjs.init("cWiok7lvxKcDAtVM9");
+    })();
+  </script>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100">
 
   <header class="p-5">
     <div class="container">
       <h1 class="reveal">Victor Cardoza</h1>
       <p class="h2 reveal">Desarrollador PHP</p>
       <p class="lead reveal">Enfoque en Backend, Calidad y Escalabilidad</p>
-    
+      <div class="mt-4 reveal">
+        <a href="assets/cv-victor-cardoza.pdf" target="_blank" class="btn btn-primary btn-lg" download>
+          <i class="fas fa-download me-2"></i>Descargar CV
+        </a>
+      </div>
     </div>
   </header>
 
@@ -50,6 +82,10 @@
       <h2 class="reveal">Sobre Mí</h2>
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
+          <!-- Avatar -->
+          <div class="avatar-container reveal mb-4">
+            <img src="assets/img/avatar.webp" alt="Victor Cardoza" class="avatar-img">
+          </div>
           <p class="lead reveal">
             Desarrollador PHP con enfoque en backend y experiencia en el ciclo completo de desarrollo de aplicaciones web, desde el análisis de requerimientos hasta la implementación y el mantenimiento.
           </p>
@@ -109,154 +145,247 @@
 
     <section id="proyectos" class="mb-5">
         <h2 class="reveal">Proyectos Destacados</h2>
-        <div class="row">
-
-            <!-- Proyecto 1 -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal">
-                <div class="card project-card-clean">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Sistema de Transporte (PHP)</h5>
-                        <p class="card-text">Sistema de gestión de transporte con manejo de usuarios, roles, órdenes y reportes.</p>
-                        <p class="card-text"><strong>Problema:</strong> La operación se gestionaba completamente de forma manual, sin herramientas centralizadas para el control de datos, lo que generaba inconsistencias y dificultaba la trazabilidad.</p>
-                        <p class="card-text"><strong>Solución:</strong> Desarrollo de un sistema integral de gestión de transporte con arquitectura MVC, implementando módulos de usuarios, roles, órdenes y reportes. Se realizó ingeniería inversa de sistemas dispersos para centralizar la información, generando formatos únicos para establecimientos comerciales, checklists preoperacionales y un centro de KPIs con estadísticas generales del sistema.</p>
-                        <div class="tech-icons mt-auto">
-                            <i class="devicon-php-plain colored" title="PHP"></i>
-                            <i class="devicon-mysql-plain colored" title="MySQL"></i>
-                            <i class="fas fa-layer-group" title="MVC"></i>
-                            <i class="fas fa-sync-alt" title="AJAX"></i>
+        
+        <!-- Carrusel de Proyectos -->
+        <div id="projectsCarousel" class="carousel slide" data-bs-ride="false">
+            <!-- Contador de proyectos -->
+            <div class="project-counter">
+                <span class="current">1</span>
+                <span class="total">/7</span>
+            </div>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Proyecto 1"></button>
+                <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1" aria-label="Proyecto 2"></button>
+                <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2" aria-label="Proyecto 3"></button>
+                <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3" aria-label="Proyecto 4"></button>
+                <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="4" aria-label="Proyecto 5"></button>
+                <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="5" aria-label="Proyecto 6"></button>
+                <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="6" aria-label="Proyecto 7"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <!-- Proyecto 1 -->
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="card project-card-clean">
+                            <div class="card-body">
+                                <h5 class="card-title">Sistema de Transporte (PHP)</h5>
+                                <p class="card-text">Sistema de gestión de transporte con manejo de usuarios, roles, órdenes y reportes.</p>
+                                <p class="card-text"><strong>Problema:</strong> La operación se gestionaba completamente de forma manual, sin herramientas centralizadas para el control de datos, lo que generaba inconsistencias y dificultaba la trazabilidad.</p>
+                                <p class="card-text"><strong>Solución:</strong> Desarrollo de un sistema integral de gestión de transporte con arquitectura MVC, implementando módulos de usuarios, roles, órdenes y reportes. Se realizó ingeniería inversa de sistemas dispersos para centralizar la información, generando formatos únicos para establecimientos comerciales, checklists preoperacionales y un centro de KPIs con estadísticas generales del sistema.</p>
+                                <div class="tech-icons mt-3">
+                                    <i class="devicon-php-plain colored" title="PHP"></i>
+                                    <i class="devicon-mysql-plain colored" title="MySQL"></i>
+                                    <i class="fas fa-layer-group" title="MVC"></i>
+                                    <i class="fas fa-sync-alt" title="AJAX"></i>
+                                </div>
+                                <a href="#" class="btn btn-primary mt-4 disabled-link">Ver Detalles</a>
+                            </div>
                         </div>
-                        <a href="#" class="btn btn-primary mt-4 disabled-link">Ver Detalles</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Proyecto 2 -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal">
-                <div class="card project-card-clean">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Gestión ITAM</h5>
-                        <p class="card-text">Sistema administrativo para gestión de procesos internos de infraestructura tecnológica y mesa de ayuda</p>
-                        <p class="card-text"><strong>Problema:</strong> La gestión de infraestructura tecnológica y mesa de ayuda se llevaba en documentos físicos, dificultando el control de hojas de vida, cambios programados, mantenimientos y auditorías. Además, existían problemas recurrentes para obtener firmas en formatos y atender solicitudes de manera oportuna.</p>
-                        <p class="card-text"><strong>Solución:</strong> Sistema administrativo integral que digitaliza la gestión de activos tecnológicos, implementando control de ciclo de vida, programación de mantenimientos y captura digital de firmas. Se integró una mesa de ayuda para gestionar solicitudes de mantenimiento, garantizando trazabilidad completa y cumplimiento de estándares de auditoría.</p>
-                        <div class="tech-icons mt-auto">
-                            <i class="devicon-php-plain colored" title="PHP"></i>
-                            <i class="devicon-mysql-plain colored" title="MySQL"></i>
-                            <i class="devicon-bootstrap-plain colored" title="Bootstrap"></i>
+                <!-- Proyecto 2 -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="card project-card-clean">
+                            <div class="card-body">
+                                <h5 class="card-title">Gestión ITAM</h5>
+                                <p class="card-text">Sistema administrativo para gestión de procesos internos de infraestructura tecnológica y mesa de ayuda</p>
+                                <p class="card-text"><strong>Problema:</strong> La gestión de infraestructura tecnológica y mesa de ayuda se llevaba en documentos físicos, dificultando el control de hojas de vida, cambios programados, mantenimientos y auditorías. Además, existían problemas recurrentes para obtener firmas en formatos y atender solicitudes de manera oportuna.</p>
+                                <p class="card-text"><strong>Solución:</strong> Sistema administrativo integral que digitaliza la gestión de activos tecnológicos, implementando control de ciclo de vida, programación de mantenimientos y captura digital de firmas. Se integró una mesa de ayuda para gestionar solicitudes de mantenimiento, garantizando trazabilidad completa y cumplimiento de estándares de auditoría.</p>
+                                <div class="tech-icons mt-3">
+                                    <i class="devicon-php-plain colored" title="PHP"></i>
+                                    <i class="devicon-mysql-plain colored" title="MySQL"></i>
+                                    <i class="devicon-bootstrap-plain colored" title="Bootstrap"></i>
+                                </div>
+                                <a href="https://github.com/vickdark/gestionitam" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
+                            </div>
                         </div>
-                        <a href="https://github.com/vickdark/gestionitam" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Proyecto 3 -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal">
-                <div class="card project-card-clean">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Infraestructura Tech</h5>
-                        <p class="card-text">Base de desarrollo con sistema de gestion de roles y permisos con PHP 8.x </p>
-                        <p class="card-text"><strong>Problema:</strong> La repetición constante de implementar sistemas de permisos y roles en cada nuevo proyecto generaba pérdida de tiempo y código redundante.</p>
-                        <p class="card-text"><strong>Solución:</strong> Desarrollo de un framework base profesional con PHP 8.x, implementando arquitectura MVC, sistema de rutas, middlewares y gestión avanzada de roles y permisos. Integración con Vite para un stack moderno que permite enfocarse en la lógica de negocio, acelerando significativamente el desarrollo de nuevos proyectos.</p>
-                        <div class="tech-icons mt-auto">
-                            <i class="devicon-php-plain colored" title="PHP"></i>
-                            <i class="devicon-mysql-plain colored" title="MySQL"></i>
-                            <i class="fas fa-layer-group" title="MVC"></i>
+                <!-- Proyecto 3 -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="card project-card-clean">
+                            <div class="card-body">
+                                <h5 class="card-title">Infraestructura Tech</h5>
+                                <p class="card-text">Base de desarrollo con sistema de gestion de roles y permisos con PHP 8.x </p>
+                                <p class="card-text"><strong>Problema:</strong> La repetición constante de implementar sistemas de permisos y roles en cada nuevo proyecto generaba pérdida de tiempo y código redundante.</p>
+                                <p class="card-text"><strong>Solución:</strong> Desarrollo de un framework base profesional con PHP 8.x, implementando arquitectura MVC, sistema de rutas, middlewares y gestión avanzada de roles y permisos. Integración con Vite para un stack moderno que permite enfocarse en la lógica de negocio, acelerando significativamente el desarrollo de nuevos proyectos.</p>
+                                <div class="tech-icons mt-3">
+                                    <i class="devicon-php-plain colored" title="PHP"></i>
+                                    <i class="devicon-mysql-plain colored" title="MySQL"></i>
+                                    <i class="fas fa-layer-group" title="MVC"></i>
+                                </div>
+                                <a href="https://github.com/vickdark/infraestructuratech" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
+                            </div>
                         </div>
-                        <a href="https://github.com/vickdark/infraestructuratech" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Proyecto 4 -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal">
-                <div class="card project-card-clean">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Sistema de Ventas</h5>
-                        <p class="card-text">Sistema de ventas con módulos de clientes, productos y facturación.</p>
-                        <p class="card-text"><strong>Problema:</strong> Puntos de venta pequeños con contabilidad desordenada y registros manuales en libros, sin control efectivo de inventario ni seguimiento de cuentas por cobrar.</p>
-                        <p class="card-text"><strong>Solución:</strong> Sistema integral de punto de venta (POS) con gestión de inventario, control de stock, administración financiera y fidelización de clientes. Incluye dashboard inteligente con KPIs dinámicos, módulo de ventas a crédito con control de abonos y pagos diferidos, centralizando todas las operaciones comerciales en una plataforma única.</p>
-                        <div class="tech-icons mt-auto">
-                            <i class="devicon-php-plain colored" title="PHP"></i>
-                            <i class="devicon-mysql-plain colored" title="MySQL"></i>
+                <!-- Proyecto 4 -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="card project-card-clean">
+                            <div class="card-body">
+                                <h5 class="card-title">Sistema de Ventas</h5>
+                                <p class="card-text">Sistema de ventas con módulos de clientes, productos y facturación.</p>
+                                <p class="card-text"><strong>Problema:</strong> Puntos de venta pequeños con contabilidad desordenada y registros manuales en libros, sin control efectivo de inventario ni seguimiento de cuentas por cobrar.</p>
+                                <p class="card-text"><strong>Solución:</strong> Sistema integral de punto de venta (POS) con gestión de inventario, control de stock, administración financiera y fidelización de clientes. Incluye dashboard inteligente con KPIs dinámicos, módulo de ventas a crédito con control de abonos y pagos diferidos, centralizando todas las operaciones comerciales en una plataforma única.</p>
+                                <div class="tech-icons mt-3">
+                                    <i class="devicon-php-plain colored" title="PHP"></i>
+                                    <i class="devicon-mysql-plain colored" title="MySQL"></i>
+                                </div>
+                                <a href="https://github.com/vickdark/ventas" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
+                            </div>
                         </div>
-                        <a href="https://github.com/vickdark/ventas" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Proyecto 5 -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal">
-                <div class="card project-card-clean">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Laravel Root</h5>
-                        <p class="card-text">Proyecto base en Laravel aplicando buenas prácticas y estructura estándar.</p>
-                        <p class="card-text"><strong>Problema:</strong> La necesidad recurrente de implementar sistemas de permisos y roles en cada proyecto, buscando una solución que se adaptara al stack tecnológico preferido y aprovechara las ventajas de Laravel.</p>
-                        <p class="card-text"><strong>Solución:</strong> Proyecto base en Laravel que integra un stack tecnológico personalizado con sistema avanzado de usuarios, roles y permisos. Aprovecha las bondades del framework para ofrecer un desarrollo más eficiente y robusto que las implementaciones en PHP puro, sirviendo como fundación escalable para nuevos proyectos.</p>
-                        <div class="tech-icons mt-auto">
-                           <i class="devicon-laravel-plain colored" title="Laravel"></i>
-                           <i class="devicon-php-plain colored" title="PHP"></i>
-                           <i class="fas fa-layer-group" title="MVC"></i>
+                <!-- Proyecto 5 -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="card project-card-clean">
+                            <div class="card-body">
+                                <h5 class="card-title">Laravel Root</h5>
+                                <p class="card-text">Proyecto base en Laravel aplicando buenas prácticas y estructura estándar.</p>
+                                <p class="card-text"><strong>Problema:</strong> La necesidad recurrente de implementar sistemas de permisos y roles en cada proyecto, buscando una solución que se adaptara al stack tecnológico preferido y aprovechara las ventajas de Laravel.</p>
+                                <p class="card-text"><strong>Solución:</strong> Proyecto base en Laravel que integra un stack tecnológico personalizado con sistema avanzado de usuarios, roles y permisos. Aprovecha las bondades del framework para ofrecer un desarrollo más eficiente y robusto que las implementaciones en PHP puro, sirviendo como fundación escalable para nuevos proyectos.</p>
+                                <div class="tech-icons mt-3">
+                                   <i class="devicon-laravel-plain colored" title="Laravel"></i>
+                                   <i class="devicon-php-plain colored" title="PHP"></i>
+                                   <i class="fas fa-layer-group" title="MVC"></i>
+                                </div>
+                                <a href="https://github.com/vickdark/laravel-root" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
+                            </div>
                         </div>
-                        <a href="https://github.com/vickdark/laravel-root" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Proyecto 6 -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal">
-                <div class="card project-card-clean">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Laravel Multitenancy</h5>
-                        <p class="card-text">Proyecto en Laravel con arquitectura multitenancy para gestión de múltiples inquilinos.</p>
-                        <p class="card-text"><strong>Problema:</strong> La gestión de un único producto con múltiples configuraciones para diversos clientes requería soluciones personalizadas y descentralizadas, lo que aumentaba la complejidad y el mantenimiento.</p>
-                        <p class="card-text"><strong>Solución:</strong> Implementación de una arquitectura multitenancy en Laravel, permitiendo la gestión centralizada de un solo producto con configuraciones diferenciadas para múltiples clientes. Esta solución optimiza la administración, reduce la duplicidad de código y facilita la escalabilidad del servicio.</p>
-                        <div class="tech-icons mt-auto">
-                           <i class="devicon-laravel-plain colored" title="Laravel"></i>
-                           <i class="devicon-php-plain colored" title="PHP"></i>
-                           <i class="fas fa-layer-group" title="Multitenancy"></i>
+                <!-- Proyecto 6 -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="card project-card-clean">
+                            <div class="card-body">
+                                <h5 class="card-title">Laravel Multitenancy</h5>
+                                <p class="card-text">Proyecto en Laravel con arquitectura multitenancy para gestión de múltiples inquilinos.</p>
+                                <p class="card-text"><strong>Problema:</strong> La gestión de un único producto con múltiples configuraciones para diversos clientes requería soluciones personalizadas y descentralizadas, lo que aumentaba la complejidad y el mantenimiento.</p>
+                                <p class="card-text"><strong>Solución:</strong> Implementación de una arquitectura multitenancy en Laravel, permitiendo la gestión centralizada de un solo producto con configuraciones diferenciadas para múltiples clientes. Esta solución optimiza la administración, reduce la duplicidad de código y facilita la escalabilidad del servicio.</p>
+                                <div class="tech-icons mt-3">
+                                   <i class="devicon-laravel-plain colored" title="Laravel"></i>
+                                   <i class="devicon-php-plain colored" title="PHP"></i>
+                                   <i class="fas fa-layer-group" title="Multitenancy"></i>
+                                </div>
+                                <a href="https://github.com/vickdark/laravel-multitenancy" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
+                            </div>
                         </div>
-                        <a href="https://github.com/vickdark/laravel-multitenancy" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 7 -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="card project-card-clean">
+                            <div class="card-body">
+                                <h5 class="card-title">Sistema de Transporte Conductores (Ionic)</h5>
+                                <p class="card-text">Aplicación móvil para conductores, integrada con sistema backend.</p>
+                                <p class="card-text"><strong>Problema:</strong> En el sistema de transporte, los conductores solo tenían acceso limitado y debían reportar manualmente el kilometraje inicial, final y los viajes realizados, generando demoras e inconsistencias.</p>
+                                <p class="card-text"><strong>Solución:</strong> Aplicación móvil desarrollada en Ionic que automatiza el envío de kilometraje y reportes de viajes. Implementa seguimiento GPS en tiempo real, integrado con un panel de tracking web que permite al cliente monitorear toda la operación de conductores en un mapa interactivo, mejorando el control y la eficiencia operativa.</p>
+                                <div class="tech-icons mt-3">
+                                   <i class="devicon-ionic-original colored" title="Ionic"></i>
+                                   <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+                                   <i class="fas fa-map-marker-alt" title="GPS"></i>
+                                </div>
+                                <a href="https://github.com/vickdark/sistransporte-conductores" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-             <!-- Proyecto 7 -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal">
-                <div class="card project-card-clean">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Sistema de Transporte Conductores (Ionic)</h5>
-                        <p class="card-text">Aplicación móvil para conductores, integrada con sistema backend.</p>
-                        <p class="card-text"><strong>Problema:</strong> En el sistema de transporte, los conductores solo tenían acceso limitado y debían reportar manualmente el kilometraje inicial, final y los viajes realizados, generando demoras e inconsistencias.</p>
-                        <p class="card-text"><strong>Solución:</strong> Aplicación móvil desarrollada en Ionic que automatiza el envío de kilometraje y reportes de viajes. Implementa seguimiento GPS en tiempo real, integrado con un panel de tracking web que permite al cliente monitorear toda la operación de conductores en un mapa interactivo, mejorando el control y la eficiencia operativa.</p>
-                        <div class="tech-icons mt-auto">
-                           <i class="devicon-ionic-original colored" title="Ionic"></i>
-                           <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-                           <i class="fas fa-map-marker-alt" title="GPS"></i>
-                        </div>
-                        <a href="https://github.com/vickdark/sistransporte-conductores" target="_blank" class="btn btn-primary mt-4">Ver Repositorio</a>
-                    </div>
-                </div>
-            </div>
+            <!-- Controles del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
         </div>
     </section>
 
     <section id="contacto" class="text-center">
-      <h2 class="reveal">¿Interesado en Colaborar?</h2>
-        <p class="reveal">Contáctame a través de los siguientes medios.</p>
-        <div class="mt-4 reveal">
-        <a href="https://github.com/vickdark" target="_blank"><i class="fab fa-github fa-3x"></i></a>
-        <a href="https://www.linkedin.com/in/victorcardozamanjarres/"><i class="fab fa-linkedin fa-3x"></i></a>
-        <a href="mailto:correo@profesional.com"><i class="fas fa-envelope fa-3x"></i></a>
+      <h2 class="reveal">¿Quieres contactarme?</h2>
+      <p class="reveal">Estoy disponible para nuevos proyectos y colaboraciones.</p>
+      
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <form id="contact-form" class="reveal text-start bg-dark p-4 rounded shadow">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" name="name" class="form-control bg-secondary text-white border-0" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" name="email" class="form-control bg-secondary text-white border-0" id="email" 
+                       placeholder="correo@correo.com"
+                       required>
+                <div id="email-feedback" class="form-text mt-1" style="display: none;"></div>
+              </div>
+              <div class="mb-3">
+                <label for="title" class="form-label">Asunto</label>
+                <input type="text" name="title" class="form-control bg-secondary text-white border-0" id="title" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Mensaje</label>
+                <textarea name="message" class="form-control bg-secondary text-white border-0" id="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100" id="submit-btn">Enviar Mensaje</button>
+              <div id="form-status" class="mt-3 text-center"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 reveal">
+        <a href="https://github.com/vickdark" target="_blank" title="GitHub"><i class="fab fa-github fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/victorcardozamanjarres/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-3x"></i></a>
+        <a href="https://wa.me/573123355193" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp fa-3x"></i></a>
       </div>
     </section>
 
   </main>
 
   <footer class="text-center p-4 mt-5">
-    <p>&copy; 2024 - Victor Cardoza</p>
+    <p>&copy; <span id="current-year"></span> - Victor Cardoza</p>
   </footer>
 
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <!-- Script para actualizar contador del carrusel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.querySelector('#projectsCarousel');
+      const counterCurrent = document.querySelector('.project-counter .current');
+      
+      if (carousel && counterCurrent) {
+        carousel.addEventListener('slide.bs.carousel', function(event) {
+          counterCurrent.textContent = event.to + 1;
+        });
+      }
+    });
+  </script>
+  
   <script defer type="text/javascript" src="main.js"></script>
+  
+  <!-- Botón Volver Arriba -->
+  <button id="back-to-top" class="btn btn-primary" title="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 </body>
 </html>

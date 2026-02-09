@@ -1,8 +1,37 @@
 /* --- Media Queries --- */
 @media (max-width: 768px) {
-    header { padding: 100px 0; }
+    header { padding: 40px 0; min-height: 180px; }
     header h1 { font-size: 2.8rem; }
     header p.h2 { font-size: 2rem; }
     section { padding: 60px 0; }
     section h2 { font-size: 2.5rem; margin-bottom: 40px; }
+
+    /* Ajustes para las cards de proyectos en móvil */
+    #projectsCarousel {
+        padding: 0 15px; /* Reducir el padding lateral del carrusel */
+    }
+    #projectsCarousel .carousel-inner,
+    #projectsCarousel .carousel-item {
+        min-height: auto; /* Quitar la altura mínima fija que las estira */
+    }
+    .project-card-clean {
+        height: auto !important; /* Permitir que la altura se ajuste al contenido */
+        margin-bottom: 30px;
+    }
+    .project-counter {
+        top: -40px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+    }
+    .project-counter .current { font-size: 1.2rem; }
+    .project-counter .total { font-size: 0.8rem; }
+
+    /* Ajuste botón volver arriba en móvil */
+    #back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
 }

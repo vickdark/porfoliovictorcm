@@ -2,8 +2,8 @@
 
 /* Buttons */
 .btn-primary {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+    background-color: #9b59b6;
+    border-color: #9b59b6;
     padding: 10px 25px;
     font-weight: 600;
     border-radius: 5px;
@@ -11,7 +11,7 @@
 }
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4);
 }
 .disabled-link {
     background-color: #6c757d;
@@ -27,12 +27,64 @@
     border-radius: 15px;
 }
 
+/* Avatar */
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #9b59b6;
+    box-shadow: 
+        0 0 20px rgba(155, 89, 182, 0.4);
+    transition: all 0.5s ease;
+    filter: brightness(1.05) contrast(1.05); /* Ligero ajuste de imagen */
+}
+
+.avatar-img:hover {
+    transform: scale(1.02) rotate(2deg);
+    box-shadow: 
+        0 0 30px rgba(155, 89, 182, 0.6);
+}
+
+
 /* Habilidades */
 #habilidades .card { background: transparent; border: none; box-shadow: none; }
 .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 .skill-item { display: flex; flex-direction: column; align-items: center; width: 100px; text-align: center; transition: transform 0.3s ease; }
 .skill-item i { font-size: 3.5rem; margin-bottom: 15px; }
 .skill-item span { font-size: 0.9rem; font-weight: 600; color: #888; }
+
+/* Jerarquía de Habilidades */
+.skill-item--important i {
+    filter: drop-shadow(0 0 10px rgba(155, 89, 182, 0.5));
+    transform: scale(1.1);
+}
+.skill-item--important span {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.skill-item--secondary i {
+    opacity: 0.9;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+}
+
+.skill-item:hover i {
+    filter: drop-shadow(0 0 15px rgba(155, 89, 182, 0.8));
+}
+
+.skill-item:hover span {
+    color: #c77dff;
+}
 
 /* Proyectos (Transparent Card Design) */
 .project-card-clean {
@@ -63,4 +115,84 @@
     font-size: 0.95rem;
     flex-grow: 1;
     margin-bottom: 20px;
+}
+
+/* Carrusel de Proyectos */
+#projectsCarousel {
+    position: relative;
+    padding: 0 80px;
+}
+
+#projectsCarousel .carousel-inner {
+    min-height: 600px;
+}
+
+#projectsCarousel .carousel-item {
+    min-height: 600px;
+    transition: transform 0.6s ease-in-out;
+}
+
+#projectsCarousel .project-card-clean {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Controles del carrusel */
+#projectsCarousel .carousel-control-prev,
+#projectsCarousel .carousel-control-next {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(155, 89, 182, 0.3);
+    border-radius: 50%;
+    opacity: 1;
+}
+
+#projectsCarousel .carousel-control-prev {
+    left: 0;
+}
+
+#projectsCarousel .carousel-control-next {
+    right: 0;
+}
+
+#projectsCarousel .carousel-control-prev:hover,
+#projectsCarousel .carousel-control-next:hover {
+    background-color: rgba(155, 89, 182, 0.6);
+}
+
+#projectsCarousel .carousel-control-prev-icon,
+#projectsCarousel .carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Contador de proyectos */
+.project-counter {
+    position: absolute;
+    top: -60px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
+    z-index: 10;
+}
+
+.project-counter .current {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.project-counter .total {
+    font-size: 1.2rem;
+    opacity: 0.9;
 }

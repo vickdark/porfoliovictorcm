@@ -3,12 +3,26 @@
 /* Header */
 header {
     position: relative;
-    background-image: url('https://picsum.photos/seed/developer/1920/1080');
-    background-size: cover; background-position: center; text-align: center; padding: 150px 0;
+    background-image: url('https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?auto=format&fit=crop&q=80&w=1920');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 120px 0;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 header::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
     background: linear-gradient(to top, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 0.6) 50%, rgba(18, 18, 18, 0.4) 100%);
+    z-index: 1;
 }
 header .container { position: relative; z-index: 2; }
 header h1 { font-size: 4.5rem; color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
@@ -22,7 +36,63 @@ header p.lead { font-size: 1.25rem; color: #EAEAEA; opacity: 0.9; }
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.navbar .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link.active {
+    color: #c77dff !important;
+    font-weight: 600;
+}
+
+.navbar .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background-color: #c77dff;
+    border-radius: 2px;
+}
+
 /* Contacto & Footer */
 #contacto a { color: #888; margin: 0 15px; transition: all 0.3s ease; display: inline-block; }
 #contacto a:hover { color: #c77dff; transform: translateY(-5px) scale(1.1); }
 footer { border-top: 1px solid rgba(255, 255, 255, 0.1); color: #888; }
+
+/* Botón Volver Arriba */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    background-color: #9b59b6;
+    border: none;
+    color: white;
+    /* Centrado perfecto del icono */
+    align-items: center;
+    justify-content: center;
+}
+
+#back-to-top.show {
+    display: flex; /* Usamos flex para centrar y una clase para controlar visibilidad */
+}
+
+#back-to-top:hover {
+    background-color: #c77dff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(155, 89, 182, 0.5);
+}
+
+#back-to-top i {
+    font-size: 1.1rem;
+    line-height: 0; /* Evita desplazamientos por altura de línea */
+}
